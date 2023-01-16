@@ -3,17 +3,25 @@ import SlideMenu from "./components/SlideMenu";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import "./style/app.css";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <div className="app">
-        <SlideMenu />
+        {/* <Header />
+        <SlideMenu /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route />
-          <Route />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <SlideMenu />
+              </>
+            }
+          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>

@@ -1,4 +1,37 @@
-.slidemenu {
-  background-color: rgb(186, 255, 239);
-  width: 20vw;
+.slider {
+  display: flex;
+  justify-content: space-around;
+  background-color: #003585;
+  padding: 60px 20px 20px 20px;
+}
+.slider-left {
+  margin: 0;
+}
+.camera {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 140px;
+  background-color: #003585;
+}
+button {
+  background-color: #ff8957;
+}
+.slider ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+.slider a {
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 20px;
+}
+#shop {
+  background-color: white;
+  color: #003585;
+}
+#view {
+  color: white;
+  border: white 0.1px solid;
 }

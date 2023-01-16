@@ -1,0 +1,17 @@
+.login input {
+  display: block;
+}
+.login form {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+.login button {
+  background-color: #003585;
+  color: white;
+}
+.login {
+}
