@@ -6,7 +6,7 @@ import Navbar from "../components/subcomponents/Navbar";
 import Login from "./Login";
 import Products from "./Products";
 import Product from "../components/subcomponents/Product";
-import ProductSpec from "./ProductSpec";
+
 export default function Home() {
   return (
     <div className="home">
@@ -22,8 +22,8 @@ export default function Home() {
             </>
           }
         />
-        {/* <Route path="product/:id" element={<Product />} /> */}
         <Route path="/login" element={<Login />} />
+        <Route path="/product/:id" element={<Product />} />
       </Routes>
     </div>
   );

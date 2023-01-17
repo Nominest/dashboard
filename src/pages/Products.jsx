@@ -1,27 +1,8 @@
 import { useState } from "react";
-// import Product from "../components/subcomponents/Product";
 import "../style/products.css";
 import { datas } from "../util/data";
-import "../style/substyle/product.css";
 import { useNavigate } from "react-router-dom";
 
-// export default function Products() {
-//   return (
-//     <div className="products">
-//       {datas.map((data, index) => {
-//         return (
-//           <Product
-//             image={data.image}
-//             name={data.name}
-//             category={data.category}
-//             price={data.price}
-//             key={index}
-//           />
-//         );
-//       })}
-//     </div>
-//   );
-// }
 export default function Products() {
   const [productDatas, setProductDatas] = useState(datas);
   const navigate = useNavigate();
@@ -45,7 +26,7 @@ export default function Products() {
                 <div className="price">${productData.price}</div>{" "}
                 <button
                   onClick={() => {
-                    navigate(`productData/${productDatas.id}`);
+                    navigate(`productData/${productData.id}`);
                   }}
                 >
                   Дэлгэрэнгүй <img src="./book1.png" alt="" width={30} />

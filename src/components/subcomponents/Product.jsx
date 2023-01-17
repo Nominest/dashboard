@@ -1,26 +1,18 @@
-// import "../../style/substyle/product.css";
-// import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import datas from "../../util/data";
 
-// export default function Product(prop) {
-//   const navigate = useNavigate();
+export default function ProductSpec() {
+  const { id } = useParams();
+  console.log(id);
+  const thisProduct = datas.map((prod) => prod.id === id);
+  return (
+    <div>
+      <p>
+        {thisProduct.image}
+        hello
+      </p>
+    </div>
+  );
+}
 
-//   return (
-//     <div className="card">
-//       <img src={prop.image} alt="" width={200} height={200} id="singleimage" />
-//       <div className="cardconatiner">
-//         <a href="" id="title">
-//           {prop.name}
-//         </a>
-//         <p id="description">{prop.category}</p>{" "}
-//         <p id="price">{"$" + prop.price}</p>
-//         <button
-//           onClick={() => {
-//             navigate(`prop/${prop.id}`);
-//           }}
-//         >
-//           Дэлгэрэнгүй <img src="./book1.png" alt="" width={30} />
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
+//https://codesandbox.io/s/react-router-product-detail-pages-dynamic-links-tmcjc?file=/src/App.js
