@@ -1,13 +1,15 @@
-import { Route, Routes, NavLink } from "react-router-dom";
 import "../style/header.css";
-import Login from "../pages/Login";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
   return (
     <header>
-      <div>
+      <div
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
         <img src="./E-logo.svg" alt="" />
       </div>
       <div className="searchbar">
@@ -25,11 +27,16 @@ export default function Header() {
                 navigate("/login");
               }}
             >
-              <a href=""> Sign In</a>
+              <a href="">
+                Sign In <img src="./refer.png" alt="" width={40} />
+              </a>
             </div>
           </li>
           <li>
-            <a href="">Favourites</a>
+            <a href="">
+              Favourites
+              <img src="./book1.png" alt="" width={40} />
+            </a>
           </li>
         </ul>
       </div>

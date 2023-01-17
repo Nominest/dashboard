@@ -1,38 +1,33 @@
-// import { Route, Routes, NavLink } from "react-router-dom";
-// import "../../style/substyle/navbar.css";
-// import Login from "../../pages/Login";
-
-// export default function Navbar() {
-//   let activeClassName = "";
-//   return (
-//     <header>
-//       <div>
-//         <img src="./logo.png" alt="" />
-//       </div>
-//       <div className="searchbar">
-//         <input type="text" placeholder="Search anything" />
-//         <button>
-//           <a href="">Search</a>
-//         </button>
-//       </div>
-//       <div className="signin">
-//         <ul>
-//           <li>
-//             <NavLink
-//               to="signin"
-//               className={({ isActive }) => isActive && activeClassName}
-//             >
-//               Sign In
-//             </NavLink>
-//           </li>
-//           <li>
-//             <a href="">Favourites</a>
-//           </li>
-//         </ul>
-//       </div>
-//       <Routes>
-//         <Route path="/signin" element={<Login />} />
-//       </Routes>
-//     </header>
-//   );
-// }
+import "../../style/substyle/navbar.css";
+export default function Navbar() {
+  return (
+    <div className="navbar">
+      <div className="nav-left">
+        <ul>
+          <li>
+            <a href="">Popular Products</a>
+          </li>
+        </ul>
+      </div>
+      <div className="nav-right">
+        <ul>
+          <li>
+            <a href="">Cameras</a>
+          </li>
+          <li>
+            <a href="">Laptops</a>
+          </li>
+          <li>
+            <a href="">Tablets</a>
+          </li>
+          <li>
+            <a href="">Mouse</a>
+          </li>
+          <li>
+            <a href="">Sale</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}

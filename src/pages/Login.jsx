@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { users } from "../util/data";
 import "../style/login.css";
 
 export default function Login(prop) {
