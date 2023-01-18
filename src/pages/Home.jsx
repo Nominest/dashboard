@@ -23,6 +23,7 @@ export default function Home() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
       </Routes>
     </div>

@@ -641,3 +641,18 @@ export const datas = [
 export default {
   datas,
 };
+
+export const buttons = [
+  {
+    name: "Popular Products",
+    value: "all",
+  },
+  {
+    name: "Computer",
+    value: "computers & tablets",
+  },
+  {
+    name: "Appliances",
+    value: "appliances",
+  },
+];

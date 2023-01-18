@@ -1,14 +1,16 @@
-.nav-right ul {
-  list-style-type: none;
+.nav-right {
+  display: flex;
   gap: 13px;
 }
-.nav-right a {
+.nav-right button {
   text-decoration: none;
   border: 0.1px solid #003585;
   border-radius: 20px;
   padding: 10px;
+  background-color: white;
+  color: #003585;
 }
-.nav-right a:hover {
+.nav-right button:hover {
   text-decoration: none;
   border: 0.1px solid #a7f65c;
   background-color: #a7f65c;
@@ -20,18 +22,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  background-color: white;
 }
-.nav-right ul {
-  display: flex;
-  color: #003585;
-}
-.nav-left ul {
-  list-style-type: none;
-  color: #003585;
-}
-.nav-left a {
+.nav-left button {
   text-decoration: none;
   color: #003585;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 600;
+  background-color: white;
+  border: none;
 }

@@ -1,33 +1,19 @@
 import "../../style/substyle/navbar.css";
+
 export default function Navbar() {
   return (
     <div className="navbar">
       <div className="nav-left">
-        <ul>
-          <li>
-            <a href="">Popular Products</a>
-          </li>
-        </ul>
+        <button>Popular Products</button>
       </div>
-      <div className="nav-right">
-        <ul>
-          <li>
-            <a href="">Cameras</a>
-          </li>
-          <li>
-            <a href="">Laptops</a>
-          </li>
-          <li>
-            <a href="">Tablets</a>
-          </li>
-          <li>
-            <a href="">Mouse</a>
-          </li>
-          <li>
-            <a href="">Sale</a>
-          </li>
-        </ul>
+      <div className="nav-right" onClick={filteringCategory}>
+        <button>Cameras</button>
+        <button>Laptops</button>
+        <button>Tablets</button>
+        <button>Mouse</button>
+        <button>Sale</button>
       </div>
     </div>
   );
 }
+//https://codesandbox.io/s/filter-with-react-button-forked-vtcrn1?file=/src/App.js

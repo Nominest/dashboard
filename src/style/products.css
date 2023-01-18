@@ -22,11 +22,12 @@
   font-size: 18px;
 }
 .blog-container button {
-  background-color: #003585;
+  background-color: white;
   color: white;
   border-radius: 20px;
   padding: 10px;
   margin-top: 20px;
+  margin: auto;
 }
 .blog-post {
   color: black;
@@ -35,4 +36,7 @@
   padding: 10px;
   border-radius: 20px;
   justify-content: space-between;
+}
+.buttons {
+  gap: 20px;
 }
