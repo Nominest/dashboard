@@ -1,19 +1,37 @@
 import "../../style/substyle/navbar.css";
-
+import { getData, filterData } from "./Filter";
+import { useState, useEffect } from "react";
+import { buttons } from "../../util/data";
 export default function Navbar() {
+  const [filtredData, setFiltredData] = useState(null);
+  useEffect(() => {
+    setFiltredData(getData());
+  }, []);
+
+  function handlePokemon(e) {
+    let typePokemon = e.target.value;
+    typePokemon !== "all"
+      ? setFiltredData(filterData(typePokemon))
+      : setFiltredData(getData());
+  }
+
   return (
-    <div className="navbar">
-      <div className="nav-left">
-        <button>Popular Products</button>
-      </div>
-      <div className="nav-right" onClick={filteringCategory}>
-        <button>Cameras</button>
-        <button>Laptops</button>
-        <button>Tablets</button>
-        <button>Mouse</button>
-        <button>Sale</button>
-      </div>
-    </div>
+    <>
+      {buttons &&
+        buttons.map((type, index) => (
+          <>
+            <button key={index} value={type.value} onClick={handlePokemon}>
+              {type.name}
+            </button>
+          </>
+        ))}
+
+      {filtredData &&
+        filtredData.map((type) => (
+          <ul key={type.id}>
+            <li>{type.name}</li>
+          </ul>
+        ))}
+    </>
   );
 }
-//https://codesandbox.io/s/filter-with-react-button-forked-vtcrn1?file=/src/App.js
