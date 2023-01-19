@@ -1,6 +1,5 @@
 // import "../style/home.css";
 import { Route, Routes } from "react-router-dom";
-import Header from "../components/Header";
 import SlideMenu from "../components/SlideMenu";
 import Navbar from "../components/subcomponents/Navbar";
 import Login from "./Login";
@@ -15,10 +14,9 @@ export default function Home() {
           path="/"
           element={
             <>
-              <Header />
               <SlideMenu />
               <Navbar />
-              <Products />
+              {/* <Products /> */}
             </>
           }
         />

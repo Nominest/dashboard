@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
+
   return (
     <header>
       <div
         onClick={() => {
-          navigate("/home");
+          navigate("/");
         }}
       >
         <img src="./E-logo.svg" alt="" />
@@ -21,16 +22,14 @@ export default function Header() {
       <div className="signin">
         <ul>
           <li>
-            <div
+            <button
               to="signin"
               onClick={() => {
                 navigate("/login");
               }}
             >
-              <a href="">
-                Sign In <img src="./refer.png" alt="" width={40} />
-              </a>
-            </div>
+              Sign In <img src="./refer.png" alt="" width={40} />
+            </button>
           </li>
           <li>
             <a href="">

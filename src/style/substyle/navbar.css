@@ -32,3 +32,20 @@
   background-color: white;
   border: none;
 }
+.nav button {
+  color: white;
+  background-color: #003585;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  width: 20%;
+}
+.nav {
+  justify-content: space-around;
+}
+.sale {
+  background-color: #a7f65c;
+  height: 40px;
+  width: 50%;
+  text-align: center;
+}

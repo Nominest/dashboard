@@ -144,7 +144,7 @@ export const datas = [
       "https://www.xiaomihome.global/wp-content/uploads/2022/11/xiaomi-book-air-13-2022-cover-1.webp",
     price: 1200,
     stock: 10,
-    sale: 247,
+    sale: 0,
     category: "laptop",
   },
 
@@ -157,7 +157,7 @@ export const datas = [
       "https://www.assets.signify.com/is/image/PhilipsLighting/d89b1c063b8440aabe54ab1200701c14?clipPathE=legacy_path&$pnglarge$",
     price: 80,
     stock: 4,
-    sale: 2,
+    sale: 20,
     category: "appliances",
   },
 
@@ -289,7 +289,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/81c+9BOQNWL._AC_SX679_.jpg",
     price: 1094,
     stock: 3,
-    sale: 1,
+    sale: 0,
     category: "tablets",
   },
   {
@@ -309,7 +309,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/61b2BrYtVGL._AC_SX679_.jpg",
     price: 189,
     stock: 22,
-    sale: 0.4,
+    sale: 0,
     category: "tablets",
   },
   {
@@ -329,7 +329,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/81d74GHCPEL._AC_SX679_.jpg",
     price: 1099,
     stock: 3,
-    sale: 0.2,
+    sale: 0,
     category: "tablets",
   },
   {
@@ -351,7 +351,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/51qmNla8aTL._AC_SX679_.jpg",
     price: 1399.99,
     stock: 5,
-    sale: 0.1,
+    sale: 0,
     category: "tablets",
   },
   {
@@ -373,7 +373,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/51D3B+8L7DL._AC_SX679_.jpg",
     price: 1399.99,
     stock: 4,
-    sale: 0.1,
+    sale: 0,
     category: "tablets",
   },
 
@@ -387,7 +387,7 @@ export const datas = [
       "https://m.media-amazon.com/images/I/51vfoiVL2LL._AC_UY436_FMwebp_QL65_.jpg",
     price: 94.99,
     stock: 28,
-    sale: 10.0,
+    sale: 10,
     category: "telescope",
   },
 
@@ -404,7 +404,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/41jzRLfDnAL._AC._SR360,460.jpg",
     price: 949.99,
     stock: 10,
-    sale: 10.0,
+    sale: 10,
     category: "computers & tablets",
   },
 
@@ -420,7 +420,7 @@ export const datas = [
     image: "https://m.media-amazon.com/images/I/61uA2UVnYWL._AC._SR360,460.jpg",
     price: 394.99,
     stock: 40,
-    sale: 50.0,
+    sale: 50,
     category: "computers & tablets",
   },
 
@@ -438,7 +438,7 @@ export const datas = [
       "https://m.media-amazon.com/images/I/61EN9UQLg2L._AC_UY436_FMwebp_QL65_.jpg",
     price: 389.99,
     stock: 20,
-    sale: 9.0,
+    sale: 9,
     category: "gaming console",
   },
 
@@ -452,7 +452,7 @@ export const datas = [
       "https://m.media-amazon.com/images/I/81s-z8ThKlL._AC_UL640_FMwebp_QL65_.jpg",
     price: 89.99,
     stock: 5,
-    sale: 5.0,
+    sale: 5,
     category: "appliances",
   },
   {
@@ -655,4 +655,23 @@ export const buttons = [
     name: "Appliances",
     value: "appliances",
   },
+  {
+    name: "Accessories",
+    value: "Apple",
+  },
+  {
+    name: "Gaming",
+    value: "gaming console",
+  },
+];
+export const users = [
+  { userName: "nomin", password: "nnnn" },
+  {
+    userName: "bbbb",
+    password: "wwww",
+  },
+];
+export const MENUS = [
+  { name: "HOME", url: "/" },
+  { name: "LOGIN", url: "/login" },
 ];

@@ -2,25 +2,25 @@ import { useParams } from "react-router-dom";
 import { datas } from "../../util/data";
 import Header from "../Header";
 import "../../style/substyle/product.css";
+import Navbar from "./Navbar";
 export default function Product() {
   const { id } = useParams();
   console.log(id);
-  const thisProduct = datas.find((prod) => prod.id === id);
+  const filtredData = datas.find((prod) => prod.id === id);
   return (
     <div>
-      <Header />
       <div className="product-detail">
         <img
           className="single-cover-img"
-          src={thisProduct.image}
+          src={filtredData.image}
           alt=""
           width={400}
           height={400}
         />
         <div className="product-detail-">
-          <p className="product-name">{thisProduct.name}</p>
-          <p className="product-price">{thisProduct.price} ₮</p>
-          <p className="product-stock">Үлдэгдэл: {thisProduct.stock}</p>
+          <p className="product-name">{filtredData.name}</p>
+          <p className="product-price">{filtredData.price} ₮</p>
+          <p className="product-stock">Үлдэгдэл: {filtredData.stock}</p>
           <div className="buttons">
             <button>Buy </button>
             <button>
