@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "../style/slide.css";
-
+import(useNavigate);
 export default function SlideMenu() {
+  const navigate = useNavigate();
   return (
     <div className="slider">
       <div className="slider-left">
@@ -11,9 +13,14 @@ export default function SlideMenu() {
         <div>
           <ul>
             <li>
-              <a href="" id="shop">
+              <button
+                to="signin"
+                onClick={() => {
+                  navigate("/products");
+                }}
+              >
                 Shop Now
-              </a>
+              </button>
             </li>
             <li>
               <a href="" id="view">

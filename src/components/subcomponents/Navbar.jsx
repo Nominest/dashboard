@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { buttons } from "../../util/data";
 import { useNavigate, Link } from "react-router-dom";
 import { type } from "@testing-library/user-event/dist/type";
-
+import Products from "../../pages/Products";
 export default function Navbar() {
   const [filtredData, setFiltredData] = useState(null);
   useEffect(() => {
@@ -21,17 +21,23 @@ export default function Navbar() {
 
   return (
     <div className="nav">
+      {/* <button
+        onClick={() => {
+          navigate(<Products />);
+        }}
+      >
+        All
+      </button> */}
       {buttons &&
         buttons.map((type, index) => (
           <button key={index} value={type.value} onClick={handlePokemon}>
             {type.name}
           </button>
         ))}
-
       {filtredData ? (
         <div className="blog-content-section">
           <div className="blog-container">
-            {filtredData.map((productData) => (
+            {filtredData.slice(0, 6).map((productData) => (
               <div className="blog-post" key={productData.id}>
                 <img
                   className="cover-img"
