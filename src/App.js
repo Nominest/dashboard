@@ -16,7 +16,7 @@ function App() {
         setIsLoggedIn(true);
         console.log("success");
       } else {
-        console.log("error");
+        alert("error");
       }
     });
   }

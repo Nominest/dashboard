@@ -49,7 +49,10 @@ export default function Navbar() {
                 <p className="name">{productData.name}</p>
                 <p className="description">{productData.category}</p>
                 <div className="price">${productData.price}</div>
-                <div className="sale">{productData.sale}% off</div>
+                <div>
+                        {productData.sale > 0 ?
+                            (<p className='sale'>{productData.sale}% off</p>) : (console.log(' '))}
+                    </div>
                 <div className="buttons">
                   <Link to={`/product/${productData.id}`}> Дэлгэрэнгүй</Link>
                   <button
