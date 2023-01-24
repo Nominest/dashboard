@@ -40,6 +40,7 @@
   border-radius: 20px;
   width: 15%;
 }
+
 .nav {
   justify-content: space-around;
 }
@@ -48,4 +49,8 @@
   height: 40px;
   width: 50%;
   text-align: center;
+}
+.prod {
+  list-style: none;
+  text-decoration: none;
 }

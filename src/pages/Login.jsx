@@ -6,15 +6,13 @@ export default function Login(prop) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-
   function loginHandler(e) {
     e.preventDefault();
     setUserName(e.target.userName.value);
     setPassword(e.target.password.value);
     logState(userName, password);
   }
-  console.log("pass", password);
-  console.log("user", userName);
+
   return (
     <div className="login">
       <form onSubmit={loginHandler}>
@@ -25,7 +23,9 @@ export default function Login(prop) {
         />
         <input type="text" name="password" placeholder="Нууц үг" />
         <br />
-        <button type="submit">Нэвтрэх</button>
+        <button type="submit" onClick={() => logState(userName, password)}>
+          Нэвтрэх
+        </button>
         <br />
         <button>Бүртгүүлэх</button>
       </form>

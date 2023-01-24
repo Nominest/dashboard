@@ -1,10 +1,12 @@
-// import "../style/home.css";
 import { Route, Routes } from "react-router-dom";
 import SlideMenu from "../components/SlideMenu";
 import Navbar from "../components/subcomponents/Navbar";
 import Login from "./Login";
 import Products from "./Products";
 import Product from "../components/subcomponents/Product";
+import Sale from "../components/subcomponents/Sale";
+import Brands from "../components/subcomponents/Brands";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -16,11 +18,13 @@ export default function Home() {
             <>
               <SlideMenu />
               <Navbar />
-              {/* <Products /> */}
+              <Sale />
+              <Brands />
+              <Footer />
             </>
           }
         />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
       </Routes>

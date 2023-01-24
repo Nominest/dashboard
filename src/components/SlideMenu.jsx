@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../style/slide.css";
-import(useNavigate);
+
 export default function SlideMenu() {
   const navigate = useNavigate();
   return (

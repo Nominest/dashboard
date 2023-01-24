@@ -15,7 +15,8 @@
   background-color: #003585;
 }
 button {
-  background-color: #ff8957;
+  background-color: #003585;
+  color: white;
 }
 .slider ul {
   list-style-type: none;
