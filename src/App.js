@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import "./style/app.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Product from "./components/subcomponents/Product";
 import Products from "./pages/Products";
 function App() {

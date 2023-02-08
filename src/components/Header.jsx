@@ -1,8 +1,15 @@
 import "../style/header.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default function Header() {
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <header>
@@ -32,10 +39,22 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <a href="">
+            <Button variant="primary" onClick={handleShow} className="me-2">
+              Favourites
+            </Button>
+            <Offcanvas show={show} onHide={handleClose} placement="end">
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                Some text as placeholder. In real life you can have the elements
+                you have chosen. Like, text, images, lists, etc.
+              </Offcanvas.Body>
+            </Offcanvas>
+            {/* <a href="">
               Favourites
               <img src="./book1.png" alt="" width={40} />
-            </a>
+            </a> */}
           </li>
         </ul>
       </div>
