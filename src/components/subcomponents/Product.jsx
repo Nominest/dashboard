@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { datas } from "../../util/data";
-import Header from "../Header";
 import "../../style/substyle/product.css";
-import Navbar from "./Navbar";
+
 export default function Product() {
   const { id } = useParams();
   console.log(id);

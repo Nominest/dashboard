@@ -57,7 +57,6 @@ export default function Navbar() {
                     console.log(" ")
                   )}
                 </div>
-
                 <div className="favourite">
                   <img src="./book1.png" alt="" width={30} />
                 </div>

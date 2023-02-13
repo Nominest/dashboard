@@ -2,15 +2,15 @@ import { useState } from "react";
 import "../style/login.css";
 
 export default function Login(prop) {
-  const { logState } = prop;
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const { loginCheck } = prop;
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
 
   function loginHandler(e) {
     e.preventDefault();
     setUserName(e.target.userName.value);
     setPassword(e.target.password.value);
-    logState(userName, password);
+    loginCheck(userName, password);
   }
 
   return (
@@ -23,9 +23,7 @@ export default function Login(prop) {
         />
         <input type="text" name="password" placeholder="Нууц үг" />
         <br />
-        <button type="submit" onClick={() => logState(userName, password)}>
-          Нэвтрэх
-        </button>
+        <button type="submit">Нэвтрэх</button>
         <br />
         <button>Бүртгүүлэх</button>
       </form>

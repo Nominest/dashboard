@@ -1,11 +1,12 @@
 import "../style/header.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Product from "./subcomponents/Product";
 
-export default function Header() {
+export default function Header(prop) {
+  const { isLoggedIn, currentUser } = prop;
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -35,7 +36,8 @@ export default function Header() {
                 navigate("/login");
               }}
             >
-              Sign In <img src="./refer.png" alt="" width={40} />
+              {currentUser ? `${currentUser.userName}` : "Sign In"}
+              <img src="./refer.png" alt="" width={40} />
             </button>
           </li>
           <li>
@@ -47,8 +49,7 @@ export default function Header() {
                 <Offcanvas.Title>Offcanvas</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                Some text as placeholder. In real life you can have the elements
-                you have chosen. Like, text, images, lists, etc.
+                <Product />
               </Offcanvas.Body>
             </Offcanvas>
             {/* <a href="">

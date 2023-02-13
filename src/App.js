@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { users, MENUS } from "./util/data";
+import { users } from "./util/data";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -9,26 +9,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Product from "./components/subcomponents/Product";
 import Products from "./pages/Products";
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState();
 
-  function LoginCheck(userName, password) {
-    users.map((user) => {
+  function loginCheck(userName, password) {
+    users.find((user) => {
       if (user.userName === userName && user.password === password) {
-        setIsLoggedIn(true);
+        setCurrentUser(user);
         console.log("success");
-      } else {
-        alert("error");
       }
     });
   }
+
   return (
     <div className="App">
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/*" element={<Home />} />
         <Route
-          path="/login"
-          element={isLoggedIn ? <Home /> : <Login logState={LoginCheck} />}
+          path="/login/*"
+          element={currentUser ? <Home /> : <Login loginCheck={loginCheck} />}
         />
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
