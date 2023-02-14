@@ -1,12 +1,12 @@
 import "../style/header.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Product from "./subcomponents/Product";
+import { UserContext } from "../App";
 
-export default function Header(prop) {
-  const { isLoggedIn, currentUser } = prop;
+export default function Header() {
+  const { currentUser, loggedIn } = useContext(UserContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -36,7 +36,7 @@ export default function Header(prop) {
                 navigate("/login");
               }}
             >
-              {currentUser ? `${currentUser.userName}` : "Sign In"}
+              {loggedIn ? `Welcome, ${currentUser.userName}` : "Sign In"}
               <img src="./refer.png" alt="" width={40} />
             </button>
           </li>
@@ -48,14 +48,8 @@ export default function Header(prop) {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title>Offcanvas</Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Product />
-              </Offcanvas.Body>
+              <Offcanvas.Body>No Product</Offcanvas.Body>
             </Offcanvas>
-            {/* <a href="">
-              Favourites
-              <img src="./book1.png" alt="" width={40} />
-            </a> */}
           </li>
         </ul>
       </div>

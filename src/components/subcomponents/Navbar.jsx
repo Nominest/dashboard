@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export default function Navbar() {
   const [filtredData, setFiltredData] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState();
   const navigate = useNavigate();
   useEffect(() => {
     setFiltredData(getData());
@@ -58,7 +59,14 @@ export default function Navbar() {
                   )}
                 </div>
                 <div className="favourite">
-                  <img src="./book1.png" alt="" width={30} />
+                  <button
+                    onClick={() => {
+                      // setSelectedProduct("");
+                      navigate(`basket/${productData.id}`);
+                    }}
+                  >
+                    <img src="./book1.png" alt="" width={30} />
+                  </button>
                 </div>
               </div>
             ))}

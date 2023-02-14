@@ -1,33 +1,18 @@
-import { useState } from "react";
+import { useContext } from "react";
 import "../style/products.css";
-import { datas } from "../util/data";
 import { useNavigate, Link } from "react-router-dom";
-import Navbar from "../components/subcomponents/Navbar";
+import { ProductHomeContext } from "../App";
 
 export default function Products() {
-  const [productDatas, setProductDatas] = useState(datas);
+  const { productsHome } = useContext(ProductHomeContext);
   const navigate = useNavigate();
-
-  // filteringCategory = (e) => {
-  //   let categ = e.target.value;
-  //   if (categ === "") {
-  //     this.setState({ cat: categ, products: datas }) } else {
-  //       this.setState({
-  //         cat:categ,
-  //         products: datas.filter((filProd) => {
-  //           return filProd.category.indexOf(e.target.value) >= 0
-  //         })
-  //       })
-  //     };
-  //   }
-  // };
 
   return (
     <div className="card">
-      {productDatas ? (
+      {productsHome ? (
         <div className="blog-content-section">
           <div className="blog-container">
-            {productDatas.map((productData) => (
+            {productsHome.map((productData, id) => (
               <div className="blog-post" key={productData.id}>
                 <img
                   className="cover-img"

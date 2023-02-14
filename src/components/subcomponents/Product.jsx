@@ -4,6 +4,7 @@ import "../../style/substyle/product.css";
 
 export default function Product() {
   const { id } = useParams();
+
   console.log(id);
   const filtredData = datas.find((prod) => prod.id === id);
   return (

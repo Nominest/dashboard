@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import SlideMenu from "../components/SlideMenu";
 import Navbar from "../components/subcomponents/Navbar";
-import Login from "./Login";
 import Products from "./Products";
 import Product from "../components/subcomponents/Product";
 import Sale from "../components/subcomponents/Sale";
@@ -24,7 +23,7 @@ export default function Home() {
             </>
           }
         />
-        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/login" element={<Footer />} /> */}
         <Route path="/product" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
       </Routes>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 import "../style/login.css";
 
 export default function Login(prop) {
@@ -27,6 +28,7 @@ export default function Login(prop) {
         <br />
         <button>Бүртгүүлэх</button>
       </form>
+      <Footer />
     </div>
   );
 }
