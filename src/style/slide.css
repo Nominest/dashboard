@@ -18,6 +18,12 @@ button {
   background-color: #003585;
   color: white;
 }
+.shopnow {
+  border: white 0.1px solid;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 20px;
+}
 .slider ul {
   list-style-type: none;
   display: flex;
@@ -33,6 +39,8 @@ button {
   color: #003585;
 }
 #view {
-  color: white;
   border: white 0.1px solid;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 20px;
 }

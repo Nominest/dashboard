@@ -1,22 +1,32 @@
 import "../../style/substyle/navbar.css";
-import { getData, filterData } from "./Filter";
+// import { getData, filterData } from "./Filter";
+// import { datas } from "../../util/data";
 import { useState, useEffect } from "react";
 import { buttons } from "../../util/data";
 import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { ProductHomeContext } from "../contexts/ProductContext";
 
 export default function Navbar() {
   const [filtredData, setFiltredData] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState();
+  // const [selectedProduct, setSelectedProduct] = useState();
+  const { productsHome } = useContext(ProductHomeContext);
+
   const navigate = useNavigate();
+
+  function filterData(dataType) {
+    return productsHome.filter((type) => type.category === dataType);
+  }
+
   useEffect(() => {
-    setFiltredData(getData());
+    setFiltredData(productsHome);
   }, []);
 
   function handlePokemon(e) {
     let typePokemon = e.target.value;
     typePokemon !== "all"
       ? setFiltredData(filterData(typePokemon))
-      : setFiltredData(getData());
+      : setFiltredData(productsHome);
   }
 
   return (
@@ -30,8 +40,8 @@ export default function Navbar() {
       {filtredData ? (
         <div className="blog-content-section">
           <div className="blog-container">
-            {filtredData.slice(0, 6).map((productData) => (
-              <div className="blog-post" key={productData.id}>
+            {filtredData.slice(0, 6).map((productData, i) => (
+              <div className="blog-post" key={i}>
                 <Link to={`/product/${productData.id}`}>
                   <div
                     className="prod"
@@ -61,7 +71,6 @@ export default function Navbar() {
                 <div className="favourite">
                   <button
                     onClick={() => {
-                      // setSelectedProduct("");
                       navigate(`basket/${productData.id}`);
                     }}
                   >

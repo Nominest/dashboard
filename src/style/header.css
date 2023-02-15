@@ -36,7 +36,11 @@ header button {
   text-decoration: underline;
   font-size: 18px;
 }
+
 .search {
   border: 1px solid white;
   height: 48px;
+}
+#signedin {
+  width: 200px;
 }

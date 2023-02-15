@@ -14,6 +14,7 @@ export default function SlideMenu() {
           <ul>
             <li>
               <button
+                className="shopnow"
                 to="signin"
                 onClick={() => {
                   navigate("/products");
@@ -23,9 +24,7 @@ export default function SlideMenu() {
               </button>
             </li>
             <li>
-              <a href="" id="view">
-                View More
-              </a>
+              <button id="view"> View More</button>
             </li>
           </ul>
         </div>

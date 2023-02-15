@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { UserContext } from "../App";
+import { UserContext } from "./contexts/UserContext";
 
 export default function Header() {
   const { currentUser, loggedIn } = useContext(UserContext);
@@ -31,6 +31,7 @@ export default function Header() {
         <ul>
           <li>
             <button
+              id="signedin"
               to="signin"
               onClick={() => {
                 navigate("/login");

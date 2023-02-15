@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Footer from "../components/Footer";
 import "../style/login.css";
+import { UserContext } from "../components/contexts/UserContext";
 
-export default function Login(prop) {
-  const { loginCheck } = prop;
+export default function Login() {
+  const { loginCheck } = useContext(UserContext);
   const [userName, setUserName] = useState();
   const [password, setPassword] = useState();
 

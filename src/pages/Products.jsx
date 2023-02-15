@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "../style/products.css";
 import { useNavigate, Link } from "react-router-dom";
-import { ProductHomeContext } from "../App";
+import { ProductHomeContext } from "../components/contexts/ProductContext";
 
 export default function Products() {
   const { productsHome } = useContext(ProductHomeContext);
