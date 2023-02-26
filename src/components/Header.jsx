@@ -6,7 +6,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { UserContext } from "./contexts/UserContext";
 
 export default function Header() {
-  const { currentUser, loggedIn } = useContext(UserContext);
+  const { currentUser, loggedIn, favouriteProducts } = useContext(UserContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -16,7 +16,9 @@ export default function Header() {
     <header>
       <div
         onClick={() => {
-          navigate("/");
+          {
+            navigate("/");
+          }
         }}
       >
         <img src="./E-logo.svg" alt="" />
@@ -41,21 +43,27 @@ export default function Header() {
               <img src="./refer.png" alt="" width={40} />
             </button>
           </li>
-          <li>
-            <Button variant="primary" onClick={handleShow} className="me-2">
-              Favourites
-            </Button>
-            <Offcanvas show={show} onHide={handleClose} placement="end">
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>No Product</Offcanvas.Body>
-            </Offcanvas>
-          </li>
+          <Button variant="primary" onClick={handleShow} className="me-2">
+            Favourites ({favouriteProducts})
+          </Button>
+          <Offcanvas show={show} onHide={handleClose} placement="end">
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title>Favourites</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              {currentUser.favourites && currentUser.favourites.length > 0 ? (
+                <ul>
+                  {currentUser.favourites.map((item) => (
+                    <li key={item.id}>{item.name}</li>
+                  ))}
+                </ul>
+              ) : (
+                "No favourites"
+              )}
+            </Offcanvas.Body>
+          </Offcanvas>
         </ul>
       </div>
     </header>
   );
 }
-
-//https://codesandbox.io/s/n5novwm4y0 search

@@ -5,7 +5,7 @@ import axios from "axios";
 export const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState([{}]);
+  const [currentUser, setCurrentUser] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -18,18 +18,30 @@ export function UserProvider({ children }) {
     fetchUsers();
   }, []);
 
+  // function loginCheck(userName, password) {
+  //   console.log(currentUser);
+  //   currentUser.find((user) => {
+  //     if (user.userName === userName && user.password === password) {
+  //       setCurrentUser(user);
+  //       setLoggedIn(true);
+  //       localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  //       console.log("success", user);
+  //     }
+  //   });
+  // }
   function loginCheck(userName, password) {
     console.log(currentUser);
-    currentUser.find((user) => {
-      if (user.userName === userName && user.password === password) {
-        setCurrentUser(user);
-        setLoggedIn(true);
-        localStorage.setItem("currentUser", currentUser);
-        console.log("success", user);
-      }
-    });
+    if (currentUser.length > 0) {
+      currentUser.find((user) => {
+        if (user.userName === userName && user.password === password) {
+          setCurrentUser(user);
+          setLoggedIn(true);
+          localStorage.setItem("currentUser", JSON.stringify(currentUser));
+          console.log("success", user);
+        }
+      });
+    }
   }
-
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser, loginCheck }}>
       {children}
