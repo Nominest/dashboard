@@ -7,11 +7,14 @@ import Sale from "../components/subcomponents/Sale";
 import Brands from "../components/subcomponents/Brands";
 import Footer from "../components/Footer";
 import Users from "./Users";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Login from "./Login";
+import { ProductHomeContext } from "../components/contexts/ProductContext";
 
 export default function Home() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const { loginCheck, loggedIn } = useContext(ProductHomeContext);
+
   return (
     <div className="home">
       <Routes>
